@@ -2019,11 +2019,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next-redux-wrapper */ "next-redux-wrapper");
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _redux_configureStore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../redux/configureStore */ "./redux/configureStore.js");
-/* harmony import */ var _components_Page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Page */ "./components/Page.js");
+/* harmony import */ var styletron_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styletron-react */ "styletron-react");
+/* harmony import */ var styletron_react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(styletron_react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _styletron__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styletron */ "./styletron.js");
+/* harmony import */ var _redux_configureStore__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../redux/configureStore */ "./redux/configureStore.js");
+/* harmony import */ var _components_Page__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Page */ "./components/Page.js");
 
 var _jsxFileName = "/home/koceila/Documents/Lab/Project/ecomlib-base/pages/_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
 
 
 
@@ -2040,7 +2045,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
  * @param {string} options.storeKey This key will be used to preserve store in global namespace for safe HMR
  */
 
-const makeStore = _redux_configureStore__WEBPACK_IMPORTED_MODULE_6__["default"];
+const makeStore = _redux_configureStore__WEBPACK_IMPORTED_MODULE_8__["default"];
 
 class EcomlibApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
   static async getInitialProps({
@@ -2059,38 +2064,47 @@ class EcomlibApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
       pageProps,
       store
     } = this.props;
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(styletron_react__WEBPACK_IMPORTED_MODULE_6__["Provider"], {
+      value: _styletron__WEBPACK_IMPORTED_MODULE_7__["styletron"],
+      debug: _styletron__WEBPACK_IMPORTED_MODULE_7__["debug"],
+      debugAfterHydration: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 36
+      },
+      __self: this
+    }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
       },
       __self: this
     }, __jsx("title", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 38
       },
       __self: this
-    }, "EcomLib | Find the Best E-commerce Courses & Tutorials")), __jsx(_components_Page__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }, "EcomLib | Find the Best E-commerce Courses & Tutorials")), __jsx(_components_Page__WEBPACK_IMPORTED_MODULE_9__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 42
       },
       __self: this
     }, __jsx(react_redux__WEBPACK_IMPORTED_MODULE_4__["Provider"], {
       store: store,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 43
       },
       __self: this
     }, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 44
       },
       __self: this
-    })))));
+    }))))));
   }
 
 }
@@ -2143,6 +2157,31 @@ __webpack_require__.r(__webpack_exports__);
 
 const rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({});
 /* harmony default export */ __webpack_exports__["default"] = (() => {});
+
+/***/ }),
+
+/***/ "./styletron.js":
+/*!**********************!*\
+  !*** ./styletron.js ***!
+  \**********************/
+/*! exports provided: styletron, debug */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styletron", function() { return styletron; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "debug", function() { return debug; });
+/* harmony import */ var styletron_engine_atomic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styletron-engine-atomic */ "styletron-engine-atomic");
+/* harmony import */ var styletron_engine_atomic__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styletron_engine_atomic__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styletron_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styletron-react */ "styletron-react");
+/* harmony import */ var styletron_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styletron_react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const getHydrateClass = () => document.getElementsByClassName('_styletron_hydrate_');
+
+const styletron = true ? new styletron_engine_atomic__WEBPACK_IMPORTED_MODULE_0__["Server"]() : undefined;
+const debug =  false ? undefined : new styletron_react__WEBPACK_IMPORTED_MODULE_1__["DebugEngine"]();
 
 /***/ }),
 
@@ -2331,6 +2370,28 @@ module.exports = require("redux-devtools-extension");
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
+
+/***/ }),
+
+/***/ "styletron-engine-atomic":
+/*!******************************************!*\
+  !*** external "styletron-engine-atomic" ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styletron-engine-atomic");
+
+/***/ }),
+
+/***/ "styletron-react":
+/*!**********************************!*\
+  !*** external "styletron-react" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styletron-react");
 
 /***/ }),
 

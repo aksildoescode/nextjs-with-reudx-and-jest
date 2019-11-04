@@ -4,6 +4,9 @@ import Head from 'next/head'
 import { Provider } from 'react-redux'
 import withRedux from 'next-redux-wrapper'
 
+import { Provider as StyletronProvider } from 'styletron-react'
+import { styletron, debug } from '../styletron'
+
 import configureStore from '../redux/configureStore'
 import Page from '../components/Page'
 
@@ -30,16 +33,18 @@ class EcomlibApp extends App {
 
     return (
       <>
-        <Head>
-          <title>
-            EcomLib | Find the Best E-commerce Courses &amp; Tutorials
-          </title>
-        </Head>
-        <Page>
-          <Provider store={store}>
-            <Component {...pageProps} />
-          </Provider>
-        </Page>
+        <StyletronProvider value={styletron} debug={debug} debugAfterHydration>
+          <Head>
+            <title>
+              EcomLib | Find the Best E-commerce Courses &amp; Tutorials
+            </title>
+          </Head>
+          <Page>
+            <Provider store={store}>
+              <Component {...pageProps} />
+            </Provider>
+          </Page>
+        </StyletronProvider>
       </>
     )
   }

@@ -106,21 +106,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var baseui_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! baseui/button */ "baseui/button");
+/* harmony import */ var baseui_button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(baseui_button__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/home/koceila/Documents/Lab/Project/ecomlib-base/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const IndexPage = ({
-  categories
-}) => {
+
+const IndexPage = () => {
   return __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 6
     },
     __self: undefined
-  }, " index page");
+  }, __jsx(baseui_button__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    onClick: () => alert('click'),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, "Hello"));
 };
 
 IndexPage.getInitialProps = async ({
@@ -171,6 +179,17 @@ module.exports = __webpack_require__(/*! /home/koceila/Documents/Lab/Project/eco
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "baseui/button":
+/*!********************************!*\
+  !*** external "baseui/button" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("baseui/button");
 
 /***/ }),
 

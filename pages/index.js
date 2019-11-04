@@ -1,7 +1,12 @@
 import axios from 'axios'
+import { Button } from 'baseui/button'
 
-const IndexPage = ({ categories }) => {
-  return <p> index page</p>
+const IndexPage = () => {
+  return (
+    <p>
+      <Button onClick={() => alert('click')}>Hello</Button>
+    </p>
+  )
 }
 
 IndexPage.getInitialProps = async ({ store }) => {
